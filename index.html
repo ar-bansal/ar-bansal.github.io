@@ -3,73 +3,791 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Aryan Bansal | ML Engineer</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #431a94;
+            --secondary-color: #8534cc;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --dark-bg: #212529;
+            --transition: all 0.3s ease;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
+            /* font-family: 'Inter', sans-serif; */
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
         }
+        
+        /* Navigation Styles */
+        .navbar {
+            padding: 15px 0;
+            background: white !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        /* .navbar-nav {
+            margin-right: -20px;
+        } */
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--primary-color) !important;
+        }
+
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
         .hero {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            padding: 140px 0 60px; /* Increased top padding to account for navbar */
+            position: relative;
+            border-bottom: 4px solid var(--primary-color);
         }
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: bold;
+        
+        .profile-container {
+            position: relative;
+            margin-bottom: 30px;
         }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero h2 {
+            font-size: 2.7rem;
+            font-weight: 770;
+            margin: 1rem 0;
+            padding-bottom: 5px; /* Add padding at the bottom */
+            line-height: 1.2; /* Increase line height */
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text; /* Standard property for compatibility */
+            -webkit-text-fill-color: transparent;
+            color: transparent; /* Fallback for browsers that don't support -webkit-text-fill-color */
+        }
+        
         .section {
-            padding: 60px 20px;
+            padding: 80px 0;
         }
-        .btn-custom {
-            background-color: #6a11cb;
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .social-links {
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px; /* Increased from 50px */
+            height: 55px; /* Increased from 50px */
+            border-radius: 50%;
+            background: #fff;
+            color: var(--primary-color);
+            margin: 0 10px; /* Slightly increased margin between buttons */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .social-links a i {
+            font-size: 1.4rem; /* Increase icon size */
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: var(--primary-color);
             color: white;
         }
-        .btn-custom:hover {
-            background-color: #2575fc;
+        
+        .btn-custom {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(74, 0, 224, 0.3);
+            transition: var(--transition);
         }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 0, 224, 0.4);
+            color: white;
+        }
+        
+        .about-section {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 50px 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .lead {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
         footer {
-            text-align: center;
-            padding: 20px;
-            background: #f8f9fa;
-            margin-top: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-text {
+            margin: 15px 0;
+            font-weight: 300;
+        }
+        
+        /* Experience Section Styles */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        
+        .timeline-content .date {
+            font-weight: 550;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        
+        .timeline-content ul li {
+            margin-bottom: 8px;
+        }
+        
+        /* Skills Section Styles */
+        .skill-category {
+            margin-bottom: 30px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Publication Section Styles */
+        .publication-card {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .publication-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        
+        .publication-card .date {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .publication-card p {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 40px; /* Adjusted for mobile with navbar */
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                left: 0 !important;
+            }
+            
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .timeline-container {
+                position: relative;
+                width: 50%;
+                box-sizing: border-box;
+                margin-bottom: 30px; /* Added spacing between entries */
+            }
+            
+            /* Default vertical position based on date */
+            .timeline-container {
+                position: absolute;
+                width: 45%; /* Slightly narrower to avoid touching the line */
+            }
+            
+            /* Clearfix for timeline container */
+            .timeline:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            
+            /* Ensure timeline has enough height */
+            .timeline {
+                position: relative;
+                padding-bottom: 100px; /* Add padding at bottom */
+                min-height: 800px; /* Set minimum height */
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#">Home</a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="timeline">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <h1>Hi, I'm Your Name</h1>
-        <p>AI Engineer and Researcher | Tech Enthusiast</p>
-        <a href="resume.pdf" class="btn btn-light btn-lg mt-3" target="_blank">View Resume</a>
+    <header class="hero" id="contact">
+        <div class="container text-center">
+            <div class="profile-container">
+                <img src="github-profile-picture.jpeg" alt="Aryan Bansal" class="profile-img">
+            </div>
+            <!-- <h2>Aryan Bansal</h2> -->
+            <h2>ARYAN BANSAL</h2>
+            <p class="lead">Data Scientist and Researcher | Master's Student at UC San Diego</p>
+            
+            <div class="social-links">
+                <a href="mailto:aryanbansal1710@gmail.com" target="_blank" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/ar-bansal" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/arybansal" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+            
+            <a href="Aryan_Bansal_Resume.pdf" class="btn btn-custom" target="_blank">
+                <i class="fas fa-file-alt me-2"></i>View Resume
+            </a>
+        </div>
     </header>
 
-    <!-- About Me Section -->
-    <section class="section text-center">
+    <!-- About Section -->
+    <section class="section" id="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p class="lead">I'm a passionate web developer with experience in HTML, CSS, JavaScript, and more. I love building beautiful and functional websites.</p>
+            <div class="text-center">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-section text-center">
+                        <p class="lead">I'm a passionate Data Scientist and ML Engineer with expertise in Large Language Models, Computer Vision, and MLOps.</p>
+                        <p>Currently pursuing my Master's in Data Science at UC San Diego, I combine strong technical skills with a deep understanding of machine learning principles to develop innovative AI solutions.</p>
+                        <p>With experience in both research and practical applications, I strive to create AI systems that are not only powerful but also ethical and user-friendly.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section bg-light text-center">
+    <!-- Skills Section -->
+    <section class="section" id="skills" style="background-color: var(--light-bg);">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out to me!</p>
-            <a href="mailto:your.email@example.com" class="btn btn-custom">Email Me</a>
-            <a href="https://github.com/yourusername" class="btn btn-dark">GitHub</a>
-            <a href="https://www.linkedin.com/in/yourprofile" class="btn btn-primary">LinkedIn</a>
+            <div class="text-center">
+                <h2 class="section-title">Skills</h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="text-center">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Seaborn</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <!-- <span class="skill-tag">PIL</span> -->
+                            <span class="skill-tag">C++</span>
+                            <!-- <span class="skill-tag">CUDA</span> -->
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">PySpark</span>
+                            <span class="skill-tag">SQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Frameworks</h3>
+                        <div class="text-center">
+                            <span class="skill-tag">ONNX</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">scikit-learn</span>
+                            <span class="skill-tag">Streamlit</span>
+                            <span class="skill-tag">Flask</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>AI/ML</h3>
+                        <div class="text-center">
+                            <span class="skill-tag">Computer Vision (CV)</span>
+                            <span class="skill-tag">Convolutional Neural Networks (CNNs)</span>
+                            <span class="skill-tag">Face Recognition</span>
+                            <span class="skill-tag">Generative AI</span>
+                            <span class="skill-tag">GPU Training</span>
+                            <span class="skill-tag">Large Language Models (LLMs)</span>
+                            <span class="skill-tag">Retrieval Augmented Generation</span>
+                            <!-- <span class="skill-tag">Supervised Learning</span>
+                            <span class="skill-tag">Unsupervised Learning</span> -->
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Transfer Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Cloud and Development</h3>
+                        <div class="text-center">
+                            <span class="skill-tag">AWS</span>
+                            <!-- <span class="skill-tag">EC2</span>
+                            <span class="skill-tag">S3</span>
+                            <span class="skill-tag">Lambda</span>
+                            <span class="skill-tag">CloudWatch</span> -->
+                            <span class="skill-tag">Microsoft Azure</span>
+                            <span class="skill-tag">Azure AI Services</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Google Cloud Platform</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Publications Section -->
+    <section class="section" id="publications">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Publications & Projects</h2>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="publication-card">
+                        <h3>Vehicle Number Plate Recognition Using OCR</h3>
+                        <span class="date">December 2023 | IEEE International Conference</span>
+                        <p>Published in the IEEE International Conference on Innovations in Power and Advanced Computing Technologies. Implemented OCR system for vehicle number identification from multiple angles and lighting with 93% accuracy.</p>
+                        <a href="https://ieeexplore.ieee.org/document/10434895#" class="btn btn-sm btn-custom" target="_blank">DOI: 10.1109/I-PACT58649.2023.10434895</a>
+                    </div>
+                    
+                    <div class="publication-card">
+                        <h3>Smart Classroom Using Deep Learning and IoT</h3>
+                        <span class="date">April 2022 | Springer Journal Submission</span>
+                        <p>Submitted to the Springer Journal of Reliable Intelligent Environments. Orchestrated a cutting-edge system comprising of face recognition-based attendance logging, body temperature monitoring, a hand sanitization station, and email reports.</p>
+                    </div>
+                    
+                    <div class="publication-card">
+                        <h3>Low-Code MLOps Python Package</h3>
+                        <span class="date">January 2025 - May 2025 | Personal Project</span>
+                        <p>Coded a no-boilerplate Python package for quickly launching MLOps infrastructure and tracking scikit-learn, PyTorch, and TensorFlow training pipelines.</p>
+                        <a href="https://github.com/ar-bansal/squid-ml" target="_blank" class="btn btn-sm btn-custom">View on GitHub</a>
+                    </div>
+                    
+                    <div class="publication-card">
+                        <h3>Comparison of Image Compression Techniques</h3>
+                        <span class="date">October 2024 - December 2024 | Research Project</span>
+                        <p>Systematically compared SVD-based image compression to JPEG2000 compression.</p>
+                        <a href="https://github.com/ar-bansal/image-compression" target="_blank" class="btn btn-sm btn-custom">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" id="timeline" style="background-color: var(--light-bg);">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Timeline</h2>
+            </div>
+            
+            <div class="timeline" id="experience-timeline">
+                <!-- Entry 1: MS in Data Science (Education) -->
+                <div class="timeline-container" data-type="education">
+                    <div class="timeline-content">
+                        <h3>Master of Science, Data Science</h3>
+                        <span class="date">Sep 2024 – Jun 2026 | UC San Diego, San Diego</span>
+                        <!-- <ul>
+                            <li>Coursework details can go here</li>
+                        </ul> -->
+                    </div>
+                </div>
+                
+                <!-- Entry 2: Data Scientist II (Work) -->
+                <div class="timeline-container" data-type="work">
+                    <div class="timeline-content">
+                        <h3>Data Scientist II</h3>
+                        <span class="date">Jul 2023 – Aug 2024 | Lentra AI, Bangalore</span>
+                        <!-- <ul>
+                            <li>Work details can go here</li>
+                        </ul> -->
+                    </div>
+                </div>
+                
+                <!-- Entry 3: Data Scientist I (Work) -->
+                <div class="timeline-container" data-type="work">
+                    <div class="timeline-content">
+                        <h3>Data Scientist I</h3>
+                        <span class="date">Jul 2022 – Jun 2023 | Lentra AI, Bangalore</span>
+                        <!-- <ul>
+                            <li>Work details can go here</li>
+                        </ul> -->
+                    </div>
+                </div>
+                
+                <!-- Entry 4: Data Science Intern (Work) -->
+                <div class="timeline-container" data-type="work">
+                    <div class="timeline-content">
+                        <h3>Data Science Intern</h3>
+                        <span class="date">Jan 2022 – Jun 2022 | Lentra AI, Bangalore</span>
+                        <!-- <ul>
+                            <li>Work details can go here</li>
+                        </ul> -->
+                    </div>
+                </div>
+                
+                <!-- Entry 5: Bachelor's Degree (Education) -->
+                <div class="timeline-container" data-type="education">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Technology, Electronics and Communication Engineering</h3>
+                        <span class="date">Jul 2018 – May 2022 | Vellore Institute of Technology, Vellore</span>
+                        <!-- <ul>
+                            <li>Education details can go here</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 Aryan Bansal. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timeline = document.getElementById('experience-timeline');
+            const entries = timeline.querySelectorAll('.timeline-container');
+            
+            if (entries.length > 0) {
+                // Get the type of the first entry
+                const firstEntryType = entries[0].getAttribute('data-type');
+                
+                // Apply left/right classes based on the first entry's type
+                entries.forEach(entry => {
+                    const entryType = entry.getAttribute('data-type');
+                    
+                    if (entryType === firstEntryType) {
+                        entry.classList.add('left');
+                    } else {
+                        entry.classList.add('right');
+                    }
+                });
+            }
+            
+            // Handle mobile responsiveness
+            function checkMobile() {
+                if (window.innerWidth <= 768) {
+                    entries.forEach(entry => {
+                        entry.classList.remove('left', 'right');
+                    });
+                } else {
+                    // Reapply the classes when returning to desktop
+                    const firstEntryType = entries[0].getAttribute('data-type');
+                    
+                    entries.forEach(entry => {
+                        const entryType = entry.getAttribute('data-type');
+                        
+                        // Remove any existing left/right classes first
+                        entry.classList.remove('left', 'right');
+                        
+                        // Add the appropriate class
+                        if (entryType === firstEntryType) {
+                            entry.classList.add('left');
+                        } else {
+                            entry.classList.add('right');
+                        }
+                    });
+                }
+            }
+            
+            // Initial check
+            checkMobile();
+            
+            // Listen for window resize
+            window.addEventListener('resize', checkMobile);
+            
+            // Close mobile navigation when a link is clicked
+            // Add smooth scrolling without changing URL
+            // Add smooth scrolling without changing URL
+        document.querySelectorAll('.navbar-nav a.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Calculate offset based on screen size
+                    let offset = 0;
+                    if (targetId === 'contact') {
+                        // On mobile, scroll to a position that ensures the profile and resume button are visible
+                        offset = window.innerWidth <= 768 ? 60 : 80;
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - offset,
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile navigation if applicable
+                if (window.innerWidth < 992) {
+                    document.querySelector('.navbar-toggler').click();
+                }
+            });
+        });
+        });
+    </script>
 </body>
 </html>
