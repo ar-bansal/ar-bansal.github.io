@@ -57,6 +57,7 @@
             font-weight: 500;
             margin: 0 10px;
             transition: var(--transition);
+            cursor: pointer;
         }
 
         /* .navbar-nav {
@@ -210,7 +211,7 @@
             font-weight: 300;
         }
         
-        /* Experience Section Styles */
+        /* Timeline Section Styles */
         .timeline {
             position: relative;
             max-width: 1200px;
@@ -286,6 +287,9 @@
         }
         
         .timeline-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             padding: 20px 30px;
             background-color: white;
             position: relative;
@@ -295,14 +299,14 @@
         
         .timeline-content h3 {
             color: var(--primary-color);
-            margin-top: 0;
+            margin-top: auto;
             font-size: 1.3rem;
         }
         
         .timeline-content .date {
             font-weight: 550;
             color: var(--secondary-color);
-            margin-bottom: 15px;
+            /* margin-bottom: 15px; */
             display: block;
         }
         
@@ -314,7 +318,23 @@
         .timeline-content ul li {
             margin-bottom: 8px;
         }
-        
+
+        .timeline-logo {
+            width: 50px; /* Adjust size as needed */
+            height: 50px;
+            margin-right: 15px; /* Space between logo and text */
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .timeline-text {
+            display: flex;
+            /* margin-top: auto;
+            margin-bottom: auto; */
+            flex-direction: column; 
+            justify-content: center;
+        }
+
         /* Skills Section Styles */
         .skill-category {
             margin-bottom: 30px;
@@ -368,12 +388,12 @@
         .publication-card .date {
             font-weight: 600;
             color: var(--secondary-color);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: block;
         }
         
         .publication-card p {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         
         @media (max-width: 768px) {
@@ -453,11 +473,16 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <!-- <a class="navbar-brand" href="#">Home</a> -->
+            <!-- Remove navbar-brand and make Home a regular nav-link -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-target="home">Home</a>
+                    </li>
+                </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" data-target="about">About</a>
@@ -471,16 +496,16 @@
                     <li class="nav-item">
                         <a class="nav-link" data-target="timeline">Timeline</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" data-target="contact">Contact</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero" id="contact">
+    <header class="hero" id="home">
         <div class="container text-center">
             <div class="profile-container">
                 <img src="github-profile-picture.jpeg" alt="Aryan Bansal" class="profile-img">
@@ -626,14 +651,14 @@
                     
                     <div class="publication-card">
                         <h3>Low-Code MLOps Python Package</h3>
-                        <span class="date">January 2025 - May 2025 | Personal Project</span>
+                        <span class="date">January 2025 – May 2025 | Personal Project</span>
                         <p>Coded a no-boilerplate Python package for quickly launching MLOps infrastructure and tracking scikit-learn, PyTorch, and TensorFlow training pipelines.</p>
                         <a href="https://github.com/ar-bansal/squid-ml" target="_blank" class="btn btn-sm btn-custom">View on GitHub</a>
                     </div>
                     
                     <div class="publication-card">
                         <h3>Comparison of Image Compression Techniques</h3>
-                        <span class="date">October 2024 - December 2024 | Research Project</span>
+                        <span class="date">October 2024 – December 2024 | Research Project</span>
                         <p>Systematically compared SVD-based image compression to JPEG2000 compression.</p>
                         <a href="https://github.com/ar-bansal/image-compression" target="_blank" class="btn btn-sm btn-custom">View on GitHub</a>
                     </div>
@@ -653,55 +678,75 @@
                 <!-- Entry 1: MS in Data Science (Education) -->
                 <div class="timeline-container" data-type="education">
                     <div class="timeline-content">
-                        <h3>Master of Science, Data Science</h3>
-                        <span class="date">Sep 2024 – Jun 2026 | UC San Diego, San Diego</span>
-                        <!-- <ul>
-                            <li>Coursework details can go here</li>
-                        </ul> -->
+                        <img src="assets/ucsd-logo.png" alt="UC San Diego Logo" class="timeline-logo">
+                        <div class="timeline-text">
+                            <h3>M.S., Data Science</h3>
+                            <span class="date">Sep 2024 – Jun 2026</span>
+                            <span class="date">University of California San Diego</span>
+                            <!-- <ul>
+                                <li>Coursework details can go here</li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Entry 2: Data Scientist II (Work) -->
                 <div class="timeline-container" data-type="work">
                     <div class="timeline-content">
-                        <h3>Data Scientist II</h3>
-                        <span class="date">Jul 2023 – Aug 2024 | Lentra AI, Bangalore</span>
-                        <!-- <ul>
-                            <li>Work details can go here</li>
-                        </ul> -->
+                        <img src="assets/lentra-logo.jpg" alt="Lentra AI Logo" class="timeline-logo">
+                        <div class="timeline-text">
+                            <h3>Data Scientist II</h3>
+                            <span class="date">Jul 2023 – Aug 2024</span>
+                            <span class="date">Lentra AI</span>
+                            <!-- <ul>
+                                <li>Work details can go here</li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Entry 3: Data Scientist I (Work) -->
                 <div class="timeline-container" data-type="work">
                     <div class="timeline-content">
-                        <h3>Data Scientist I</h3>
-                        <span class="date">Jul 2022 – Jun 2023 | Lentra AI, Bangalore</span>
-                        <!-- <ul>
-                            <li>Work details can go here</li>
-                        </ul> -->
+                        <img src="assets/lentra-logo.jpg" alt="Lentra AI Logo" class="timeline-logo">
+                        <div class="timeline-text">
+                            <h3>Data Scientist I</h3>
+                            <span class="date">Jul 2022 – Jun 2023</span>
+                            <span class="date">Lentra AI</span>
+                            <!-- <ul>
+                                <li>Work details can go here</li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Entry 4: Data Science Intern (Work) -->
                 <div class="timeline-container" data-type="work">
                     <div class="timeline-content">
-                        <h3>Data Science Intern</h3>
-                        <span class="date">Jan 2022 – Jun 2022 | Lentra AI, Bangalore</span>
-                        <!-- <ul>
-                            <li>Work details can go here</li>
-                        </ul> -->
+                        <img src="assets/lentra-logo.jpg" alt="Lentra AI Logo" class="timeline-logo">
+                        <div class="timeline-text">
+                            <h3>Data Science Intern</h3>
+                            <span class="date">Jan 2022 – Jun 2022</span>
+                            <span class="date">Lentra AI</span>
+                            <!-- <ul>
+                                <li>Work details can go here</li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Entry 5: Bachelor's Degree (Education) -->
                 <div class="timeline-container" data-type="education">
                     <div class="timeline-content">
-                        <h3>Bachelor of Technology, Electronics and Communication Engineering</h3>
-                        <span class="date">Jul 2018 – May 2022 | Vellore Institute of Technology, Vellore</span>
-                        <!-- <ul>
-                            <li>Education details can go here</li>
-                        </ul> -->
+                        <img src="assets/vit-logo.jpg" alt="Vellore Institute of Technology, Vellore Logo" class="timeline-logo">
+                        <div class="timeline-text">
+                            <h3>B.Tech, Electronics and Communication Engineering</h3>
+                            <span class="date">Jul 2018 – May 2022</span>
+                            <span class="date">Vellore Institute of Technology, Vellore</span>
+                            <!-- <ul>
+                                <li>Education details can go here</li>
+                            </ul> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -719,7 +764,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+    <!-- <script>
         document.addEventListener('DOMContentLoaded', function() {
             const timeline = document.getElementById('experience-timeline');
             const entries = timeline.querySelectorAll('.timeline-container');
@@ -784,7 +829,7 @@
                 if (targetElement) {
                     // Calculate offset based on screen size
                     let offset = 0;
-                    if (targetId === 'contact') {
+                    if (targetId === 'home') {
                         // On mobile, scroll to a position that ensures the profile and resume button are visible
                         offset = window.innerWidth <= 768 ? 60 : 80;
                     }
@@ -801,6 +846,132 @@
                 }
             });
         });
+        });
+    </script> -->
+    <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select both navbar-brand and nav-links to apply the same behavior
+            document.querySelectorAll('.navbar-brand, .nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Calculate offset based on screen size
+                        let offset = 0;
+                        if (targetId === 'home') {
+                            // On mobile, scroll to a position that ensures the profile and resume button are visible
+                            offset = window.innerWidth <= 768 ? 60 : 80;
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - offset,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Prevent the hash from being added to the URL
+                        history.pushState('', document.title, window.location.pathname + window.location.search);
+                    }
+                    
+                    // Close mobile navigation if applicable
+                    if (window.innerWidth < 992) {
+                        const toggler = document.querySelector('.navbar-toggler');
+                        if (!toggler.classList.contains('collapsed')) {
+                            toggler.click();
+                        }
+                    }
+                });
+            });
+        });
+    </script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+
+            const timeline = document.getElementById('experience-timeline');
+            const entries = timeline.querySelectorAll('.timeline-container');
+            
+            if (entries.length > 0) {
+                // Get the type of the first entry
+                const firstEntryType = entries[0].getAttribute('data-type');
+                
+                // Apply left/right classes based on the first entry's type
+                entries.forEach(entry => {
+                    const entryType = entry.getAttribute('data-type');
+                    
+                    if (entryType === firstEntryType) {
+                        entry.classList.add('left');
+                    } else {
+                        entry.classList.add('right');
+                    }
+                });
+            }
+            
+            // Handle mobile responsiveness
+            function checkMobile() {
+                if (window.innerWidth <= 768) {
+                    entries.forEach(entry => {
+                        entry.classList.remove('left', 'right');
+                    });
+                } else {
+                    // Reapply the classes when returning to desktop
+                    const firstEntryType = entries[0].getAttribute('data-type');
+                    
+                    entries.forEach(entry => {
+                        const entryType = entry.getAttribute('data-type');
+                        
+                        // Remove any existing left/right classes first
+                        entry.classList.remove('left', 'right');
+                        
+                        // Add the appropriate class
+                        if (entryType === firstEntryType) {
+                            entry.classList.add('left');
+                        } else {
+                            entry.classList.add('right');
+                        }
+                    });
+                }
+            }
+            
+            // Initial check
+            checkMobile();
+            
+            // Listen for window resize
+            window.addEventListener('resize', checkMobile);
+            // Select all nav-links to apply the same behavior
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Calculate offset based on screen size
+                        let offset = 0;
+                        if (targetId === 'home') {
+                            // On mobile, scroll to a position that ensures the profile and resume button are visible
+                            offset = window.innerWidth <= 768 ? 60 : 80;
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - offset,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Prevent the hash from being added to the URL
+                        history.pushState('', document.title, window.location.pathname + window.location.search);
+                    }
+                    
+                    // Close mobile navigation if applicable
+                    if (window.innerWidth < 992) {
+                        const toggler = document.querySelector('.navbar-toggler');
+                        if (!toggler.classList.contains('collapsed')) {
+                            toggler.click();
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
