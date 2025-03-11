@@ -3,15 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Aryan Bansal is a Data Scientist, ML Engineer, and AI Researcher specializing in Computer Vision, Large Language Models, and MLOps. Currently pursuing a Master's in Data Science at UC San Diego.">
+    <meta name="keywords" content="Aryan Bansal, Data Scientist, UC San Diego, Machine Learning Engineer, LLM, Computer Vision, MLOps, AI Research, ML">
+    <meta property="og:title" content="Aryan Bansal | Data Scientist">
+    <meta property="og:description" content="Data Scientist and ML Engineer specializing in LLMs, Computer Vision, and MLOps">
+    <meta property="og:image" content="github-profile-picture.jpeg">
+    <meta property="og:url" content="https://ar-bansal.github.io">
+    <!-- SEO -->
+
     <title>Aryan Bansal | Data Scientist</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="timeline.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/sections.css">
+    <link rel="stylesheet" href="styles/buttons-social.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/notifications.css">
+    <link rel="stylesheet" href="styles/sections/about.css">
+    <link rel="stylesheet" href="styles/sections/footer.css">
+    <link rel="stylesheet" href="styles/sections/hero.css">
+    <link rel="stylesheet" href="styles/sections/publications.css">
+    <link rel="stylesheet" href="styles/sections/skills.css">
+    <link rel="stylesheet" href="styles/sections/timeline.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100'><rect width='100' height='100' fill='%23f9f9f9'/><text y='75' x='5' font-size='70' font-family='system-ui' font-weight='bold' fill='%23431a94'>AB</text></svg>">
+    <link rel="canonical" href="https://ar-bansal.github.io">
 </head>
 <body>
+    <div id="copy-notification">📋 Email copied to clipboard!</div>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
@@ -46,20 +66,20 @@
     <header class="hero" id="home">
         <div class="container text-center">
             <div class="profile-container">
-                <img src="github-profile-picture.jpeg" alt="Aryan Bansal" class="profile-img">
+                <img src="github-profile-picture.jpeg" alt="Aryan Bansal - Data Scientist and ML Engineer at UC San Diego" class="profile-img">
             </div>
             <h2>ARYAN BANSAL</h2>
             <p class="lead">Data Scientist and Researcher | Master's Student at UC San Diego</p>
             
             <div class="social-links">
-                <a href="mailto:aryanbansal1710@gmail.com" target="_blank" title="Email">
-                    <i class="fas fa-envelope"></i>
+                <a href="https://www.linkedin.com/in/arybansal" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="https://github.com/ar-bansal" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/arybansal" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="#" id="email-link" title="Email">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </div>
             
@@ -277,6 +297,43 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="scripts/timeline.js"></script>
+    <script src="scripts/navigation.js"></script>
+    <script src="scripts/email.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Aryan Bansal",
+          "url": "https://ar-bansal.github.io",
+          "image": "github-profile-picture.jpeg",
+          "jobTitle": "Data Scientist",
+          "worksFor": [
+            {
+                "@type": "Organization",
+                "name": "UC San Diego"
+            }, 
+            {
+                "@type": "Organization",
+                "name": "Lentra AI"
+            }
+          ],
+          "alumniOf": [
+            {
+              "@type": "Organization",
+              "name": "University of California San Diego"
+            },
+            {
+              "@type": "Organization",
+              "name": "Vellore Institute of Technology"
+            }
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/arybansal",
+            "https://github.com/ar-bansal"
+          ],
+          "knowsAbout": ["Data Science", "Machine Learning", "Computer Vision", "Large Language Models", "MLOps", "Artificial Intelligence"]
+        }
+        </script>
 </body>
 </html>

@@ -9,6 +9,28 @@
     --transition: all 0.4s ease;
 }
 
+#copy-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a746ca; /* Green for success */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+#copy-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* Blue and Light Blue */
 /* :root {
     --primary-color: #431a94;

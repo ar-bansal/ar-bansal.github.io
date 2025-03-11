@@ -37,16 +37,6 @@
     background-color: var(--dot-color, var(--primary-color));
 }
 
-
-
-/* .timeline-container:nth-child(1)::after { background-color: var(--primary-color); }
-.timeline-container:nth-child(2)::after { background-color: color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color) 20%); }
-.timeline-container:nth-child(3)::after { background-color: color-mix(in srgb, var(--primary-color) 60%, var(--secondary-color) 40%); }
-.timeline-container:nth-child(4)::after { background-color: color-mix(in srgb, var(--primary-color) 40%, var(--secondary-color) 60%); }
-.timeline-container:nth-child(5)::after { background-color: color-mix(in srgb, var(--primary-color) 20%, var(--secondary-color) 80%); }
-.timeline-container:nth-child(6)::after { background-color: var(--secondary-color); } */
-
-
 .left {
     left: 0;
 }
