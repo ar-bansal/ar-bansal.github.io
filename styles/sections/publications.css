@@ -1,0 +1,30 @@
+.publication-card {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.publication-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.publication-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.publication-card .date {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.publication-card p {
+    margin-bottom: 20px;
+}
