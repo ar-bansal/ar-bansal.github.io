@@ -396,9 +396,9 @@
             margin-bottom: 20px;
         }
         
-        @media (max-width: 768px) {
+        /* @media (max-width: 768px) {
             .hero {
-                padding: 100px 0 40px; /* Adjusted for mobile with navbar */
+                padding: 100px 0 40px; 
             }
             
             .hero h2 {
@@ -436,27 +436,26 @@
                 position: relative;
                 width: 50%;
                 box-sizing: border-box;
-                margin-bottom: 30px; /* Added spacing between entries */
+                margin-bottom: 30px; 
             }
             
-            /* Default vertical position based on date */
+            
             .timeline-container {
                 position: absolute;
-                width: 45%; /* Slightly narrower to avoid touching the line */
+                width: 45%; 
             }
             
-            /* Clearfix for timeline container */
+        
             .timeline:after {
                 content: "";
                 display: table;
                 clear: both;
             }
             
-            /* Ensure timeline has enough height */
             .timeline {
                 position: relative;
-                padding-bottom: 100px; /* Add padding at bottom */
-                min-height: 800px; /* Set minimum height */
+                padding-bottom: 100px; 
+                min-height: 800px; 
             }
             
             .left::after, .right::after {
@@ -465,6 +464,68 @@
             
             .right {
                 left: 0%;
+            }
+        } */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 40px; /* Adjusted for mobile with navbar */
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            /* Updated timeline styles for mobile */
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            /* Force all containers to be positioned from the left edge on mobile */
+            .timeline-container.left,
+            .timeline-container.right {
+                left: 0;
+            }
+            
+            /* Ensure all containers have the "right" style arrow on mobile */
+            .timeline-container.left::before,
+            .timeline-container.right::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            /* Position all dots on the left vertical line */
+            .timeline-container.left::after,
+            .timeline-container.right::after {
+                left: 21px;
+            }
+            
+            /* Add spacing between timeline entries */
+            .timeline-container {
+                margin-bottom: 30px;
+            }
+            
+            /* Ensure timeline has enough height */
+            .timeline {
+                position: relative;
+                padding-bottom: 100px;
+                min-height: 800px;
             }
         }
     </style>
@@ -886,9 +947,122 @@
         });
     </script> -->
     <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+
+
+        //     const timeline = document.getElementById('experience-timeline');
+        //     const entries = timeline.querySelectorAll('.timeline-container');
+            
+        //     if (entries.length > 0) {
+        //         // Get the type of the first entry
+        //         const firstEntryType = entries[0].getAttribute('data-type');
+                
+        //         // Apply left/right classes based on the first entry's type
+        //         entries.forEach(entry => {
+        //             const entryType = entry.getAttribute('data-type');
+                    
+        //             if (entryType === firstEntryType) {
+        //                 entry.classList.add('left');
+        //             } else {
+        //                 entry.classList.add('right');
+        //             }
+        //         });
+        //     }
+            
+        //     // Handle mobile responsiveness
+        //     // function checkMobile() {
+        //     //     if (window.innerWidth <= 768) {
+        //     //         entries.forEach(entry => {
+        //     //             entry.classList.remove('left', 'right');
+        //     //         });
+        //     //     } else {
+        //     //         // Reapply the classes when returning to desktop
+        //     //         const firstEntryType = entries[0].getAttribute('data-type');
+                    
+        //     //         entries.forEach(entry => {
+        //     //             const entryType = entry.getAttribute('data-type');
+                        
+        //     //             // Remove any existing left/right classes first
+        //     //             entry.classList.remove('left', 'right');
+                        
+        //     //             // Add the appropriate class
+        //     //             if (entryType === firstEntryType) {
+        //     //                 entry.classList.add('left');
+        //     //             } else {
+        //     //                 entry.classList.add('right');
+        //     //             }
+        //     //         });
+        //     //     }
+        //     // }
+
+        //     // Handle mobile responsiveness
+        //     function checkMobile() {
+        //         if (window.innerWidth <= 768) {
+        //             // For mobile: remove left/right classes and add 'right' to all entries
+        //             entries.forEach(entry => {
+        //                 entry.classList.remove('left');
+        //                 entry.classList.add('right');
+        //             });
+        //         } else {
+        //             // Reapply the alternating classes when returning to desktop
+        //             const firstEntryType = entries[0].getAttribute('data-type');
+                    
+        //             entries.forEach(entry => {
+        //                 const entryType = entry.getAttribute('data-type');
+                        
+        //                 // Remove any existing left/right classes first
+        //                 entry.classList.remove('left', 'right');
+                        
+        //                 // Add the appropriate class
+        //                 if (entryType === firstEntryType) {
+        //                     entry.classList.add('left');
+        //                 } else {
+        //                     entry.classList.add('right');
+        //                 }
+        //             });
+        //         }
+        //     }
+            
+        //     // Initial check
+        //     checkMobile();
+            
+        //     // Listen for window resize
+        //     window.addEventListener('resize', checkMobile);
+        //     // Select all nav-links to apply the same behavior
+        //     document.querySelectorAll('.nav-link').forEach(link => {
+        //         link.addEventListener('click', function(e) {
+        //             e.preventDefault();
+        //             const targetId = this.getAttribute('data-target');
+        //             const targetElement = document.getElementById(targetId);
+                    
+        //             if (targetElement) {
+        //                 // Calculate offset based on screen size
+        //                 let offset = 0;
+        //                 if (targetId === 'home') {
+        //                     // On mobile, scroll to a position that ensures the profile and resume button are visible
+        //                     offset = window.innerWidth <= 768 ? 60 : 80;
+        //                 }
+                        
+        //                 window.scrollTo({
+        //                     top: targetElement.offsetTop - offset,
+        //                     behavior: 'smooth'
+        //                 });
+                        
+        //                 // Prevent the hash from being added to the URL
+        //                 history.pushState('', document.title, window.location.pathname + window.location.search);
+        //             }
+                    
+        //             // Close mobile navigation if applicable
+        //             if (window.innerWidth < 992) {
+        //                 const toggler = document.querySelector('.navbar-toggler');
+        //                 if (!toggler.classList.contains('collapsed')) {
+        //                     toggler.click();
+        //                 }
+        //             }
+        //         });
+        //     });
+        // });
         document.addEventListener('DOMContentLoaded', function() {
-
-
             const timeline = document.getElementById('experience-timeline');
             const entries = timeline.querySelectorAll('.timeline-container');
             
@@ -911,11 +1085,13 @@
             // Handle mobile responsiveness
             function checkMobile() {
                 if (window.innerWidth <= 768) {
+                    // For mobile: remove left class and add right to all entries
                     entries.forEach(entry => {
-                        entry.classList.remove('left', 'right');
+                        entry.classList.remove('left');
+                        entry.classList.add('right');
                     });
                 } else {
-                    // Reapply the classes when returning to desktop
+                    // Reapply the alternating classes when returning to desktop
                     const firstEntryType = entries[0].getAttribute('data-type');
                     
                     entries.forEach(entry => {
@@ -939,6 +1115,7 @@
             
             // Listen for window resize
             window.addEventListener('resize', checkMobile);
+            
             // Select all nav-links to apply the same behavior
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', function(e) {
