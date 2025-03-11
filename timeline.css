@@ -1,0 +1,123 @@
+/* Timeline Section Styles */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-container {
+    padding: 10px 39px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    --index: 0; 
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    border: 3px solid var(--light-bg); 
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+    background-color: var(--dot-color, var(--primary-color));
+}
+
+
+
+/* .timeline-container:nth-child(1)::after { background-color: var(--primary-color); }
+.timeline-container:nth-child(2)::after { background-color: color-mix(in srgb, var(--primary-color) 80%, var(--secondary-color) 20%); }
+.timeline-container:nth-child(3)::after { background-color: color-mix(in srgb, var(--primary-color) 60%, var(--secondary-color) 40%); }
+.timeline-container:nth-child(4)::after { background-color: color-mix(in srgb, var(--primary-color) 40%, var(--secondary-color) 60%); }
+.timeline-container:nth-child(5)::after { background-color: color-mix(in srgb, var(--primary-color) 20%, var(--secondary-color) 80%); }
+.timeline-container:nth-child(6)::after { background-color: var(--secondary-color); } */
+
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.right::after {
+    left: -10px;
+}
+
+.timeline-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-top: auto;
+    font-size: 1.3rem;
+}
+
+.timeline-content .date {
+    font-weight: 550;
+    color: var(--secondary-color);
+    display: block;
+}
+
+.timeline-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.timeline-text {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}

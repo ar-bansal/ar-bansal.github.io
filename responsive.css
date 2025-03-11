@@ -1,0 +1,57 @@
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 40px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    /* Timeline mobile adjustments */
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-container.left,
+    .timeline-container.right {
+        left: 0;
+    }
+    
+    .timeline-container.left::before,
+    .timeline-container.right::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    
+    .timeline-container.left::after,
+    .timeline-container.right::after {
+        left: 21px;
+    }
+    
+    .timeline-container {
+        margin-bottom: 30px;
+    }
+    
+    .timeline {
+        position: relative;
+        padding-bottom: 100px;
+        min-height: 800px;
+    }
+}
